@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+    name: sampleapp-deployment-service
+    labels:
+      app: sampleapp-deployment
+spec:
+    selector:
+      app: sampleapp-deployment
+    ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 80
