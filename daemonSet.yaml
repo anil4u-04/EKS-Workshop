@@ -3,23 +3,16 @@ apiVersion: apps/v1
 metadata:
   name: sampleapp-deployment
 spec:
-  # A deployment's specification really only 
+  # A deployment's specification really only
   # has a few useful options
-
-  # 2. How do want to update the pods?
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
 
   # 3. Which pods are managed by this deployment?
   selector:
     # This must match the labels we set on the pod!
     matchLabels:
       deploy: sampleapp-deployment
-  
-  # This template field is a regular pod configuration 
+
+  # This template field is a regular pod configuration
   # nested inside the deployment spec
   template:
     metadata:
@@ -30,6 +23,23 @@ spec:
     spec:
       containers:
         - name: sampleapp
-          image: <image/path>sampleapp:latest
+          image: <image/path/>repo:tag
           ports:
             - containerPort: 5000
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+    name: sampleapp-deployment-service
+    namespace : default
+    labels:
+      deploy: sampleapp-deployment
+spec:
+    selector:
+      deploy: sampleapp-deployment
+    ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
