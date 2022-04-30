@@ -2,6 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: sampleapp-deployment
+  namespace: default
 spec:
   # A deployment's specification really only 
   # has a few useful options
