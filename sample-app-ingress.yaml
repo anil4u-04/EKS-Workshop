@@ -2,7 +2,6 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   annotations:
-    ingress.kubernetes.io/ssl-redirect: "true"
     kubernetes.io/ingress.class: nginx
   name: sampleapp-ingress-nginx
   namespace: default
