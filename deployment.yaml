@@ -35,3 +35,5 @@ spec:
       containers:
         - name: sampleapp
           image: <image/path>sampleapp:latest
+          ports:
+            - containerPort: 5000
