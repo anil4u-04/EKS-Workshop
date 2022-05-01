@@ -12,10 +12,10 @@ data:
         - system:nodes
   mapUsers: |
     - userarn: arn:aws:iam::<aws account-id>:user/user1
-      username: ankish.gupta
+      username: user1
       groups:
         - system:masters
     - userarn: arn:aws:iam::<aws account-id>:user/user2
-      username: shravani.m
+      username: user2
       groups:
         - readonly
