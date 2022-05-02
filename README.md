@@ -116,6 +116,10 @@ Since we deployed our app as deployment , now you can test the daemonset. Please
 
 Now you can see the pod is running in all the nodes. 
 
+## 11. Attaching Autoscalling group to ELB
+
+We will be doing this on AWS console.
+
       
 
 
